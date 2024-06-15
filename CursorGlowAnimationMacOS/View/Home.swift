@@ -15,15 +15,14 @@ struct Home: View {
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 350, height: 728)
             
-            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 20), count: 4), content: {
+            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 20), count: 2), content: {
                 
-                ForEach(appItems) { appItem in
-                    CursorGlowView(glowOpacity: 0.5, blurRadius: 35) {
-                        Image(appItem.image)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
+                ForEach(1...4, id: \.self) { _ in
+                    CursorGlowView(glowOpacity: 0.5, blurRadius: 45) {
+                        Rectangle()
+                            .fill(.card)
                     }
-                    .frame(width: 70, height: 70)
+                    .frame(height: 180)
                 }
             })
             .padding()
