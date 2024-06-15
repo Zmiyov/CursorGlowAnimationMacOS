@@ -13,12 +13,12 @@ struct Home: View {
             Image("bg")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 350, height: 700)
+                .frame(width: 350, height: 728)
             
             LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 20), count: 4), content: {
                 
                 ForEach(appItems) { appItem in
-                    CursorGlowView(glowOpacity: 0.5) {
+                    CursorGlowView(glowOpacity: 0.5, blurRadius: 35) {
                         Image(appItem.image)
                             .resizable()
                             .aspectRatio(contentMode: .fill)
@@ -30,7 +30,7 @@ struct Home: View {
             .padding(.top, 30)
             .frame(maxHeight: .infinity, alignment: .top)
         }
-        .frame(width: 350, height: 700)
+        .frame(width: 350, height: 728)
     }
 }
 
