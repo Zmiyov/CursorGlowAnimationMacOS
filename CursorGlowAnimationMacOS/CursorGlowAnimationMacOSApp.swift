@@ -13,5 +13,6 @@ struct CursorGlowAnimationMacOSApp: App {
         WindowGroup {
             ContentView()
         }
+        .windowStyle(HiddenTitleBarWindowStyle())
     }
 }
