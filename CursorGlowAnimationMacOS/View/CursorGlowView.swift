@@ -20,7 +20,7 @@ struct CursorGlowView<Content: View>: View {
     
     //Hover+Cursor properties
     //Cursor location on main window
-    var cursorLocation: CGPoint {NSApplication.shared.mainWindow!.mouseLocationOutsideOfEventStream}
+    var cursorLocation: CGPoint {NSApplication.shared.mainWindow?.mouseLocationOutsideOfEventStream ?? .zero}
     @State var location: CGPoint = .zero
     //Storing event
     @State var event: Any?
